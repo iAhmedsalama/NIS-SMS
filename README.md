@@ -4,5 +4,7 @@
 > 
 **Project Structure**
 - Model
+- Views
 - Controllers
 - DataBase Entites
+- ViewModels
