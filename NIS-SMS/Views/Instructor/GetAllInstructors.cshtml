@@ -1,0 +1,70 @@
+﻿@model List<Instructor>
+
+@{ 
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewBag.Title="Get All Instructors";
+
+} 
+
+@*<div>
+
+    <br />
+    <div class="d-flex justify-content-center">
+         <a asp-controller="Instructor" asp-action="AddInstructor"  class="btn btn-warning w-25" >Add</a>                                
+    <br />
+    <br />
+    <table class="table table-bordered table-hover">
+             
+    <tr class="text-center">
+        <th class="text-black"> Instructor ID</th>
+        <th class="text-black"> Instructor Name</th>
+        <th class="text-black"> Instructor Image</th>
+        <th class="text-black"> Instructor Address</th>
+        <th class="text-black"> Instructor Salary</th>
+        @*<th class="text-black"> Instructor Course</th>
+        <th class="text-black"> Modify</th>
+    </tr>
+
+   @* @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">@item.ID</td>
+            <td class="text-center">@item.Name</td>
+            <td class="text-center">
+                <img src="~/images/@item.Image" style="width:50px ;height:50px"/>
+            </td>
+            <td class="text-center">@item.Address</td>
+
+            <td class="text-center">@item.Salary</td>
+
+            <td class="text-center">
+                <a asp-controller="Instructor" asp-action="EditInstructor" asp-route-id="@item.ID" class="btn btn-warning ">Edit</a>                                
+                <a asp-controller= "Instructor" asp-action="DeleteInstructor" class="btn btn-danger ">Delete</a>                                
+            </td>
+
+            
+        </tr>
+    }
+    </table>
+ </div>*@
+
+
+
+
+
+<div class="d-flex justify-content-center">
+    <div>
+         <a asp-controller="Instructor" asp-action="AddInstructor"  class="btn btn-warning w-25" >Add</a>                                
+
+          <div class="contianer ">
+            <div class="cards container  flex-lg-wrap justify-content-around align-content-around ">
+                 @foreach (var item in Model)
+                {
+                        <partial name="_instructor_card" model=@item/>
+
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

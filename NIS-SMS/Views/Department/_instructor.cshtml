@@ -1,0 +1,35 @@
+﻿@model List<Instructor>
+
+
+
+<center>
+    <table class="table table-bordered table-hover w-75">
+
+        <tr class="text-center">
+            <th>Instructor ID</th>
+            <th>Instructor Name</th>
+            <th>Instructor Image</th>
+            <th>Instructor Salary</th>
+            <th>Instructor Address</th>
+            <th>Instructor Department</th>
+        </tr>
+ 
+        
+
+        @foreach (var item in Model)
+        {
+            <tr class="text-center">
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>
+                    <img src="~/images/@item.Image" style="width:50px ;height:50px"/>
+                </td>
+                <td>@item.Salary</td>
+                <td>@item.Address</td>
+                <td>@item.dept_id</td>
+            </tr>
+        }
+
+    </table>
+
+</center>

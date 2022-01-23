@@ -1,0 +1,91 @@
+﻿@model Instructor 
+@{
+    SelectList Department;
+    if(Model !=null)
+    {
+        Department=new SelectList(ViewBag.Department,"ID","Name",Model.Department);
+
+    }else
+    {
+        Department=new SelectList(ViewBag.Department,"ID","Name");
+    }
+
+    SelectList Course;
+    if(Model != null)
+    {
+        Course = new SelectList(ViewBag.Course,"ID","Name",Model.Course);
+
+    }
+    else
+    {
+        Course=new SelectList(ViewBag.Course,"ID","Name");
+        
+    }
+}
+
+
+
+@{ 
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewBag.Title="Add Instructor";
+} 
+
+<section>
+    <div>
+            <form  asp-action="SaveAdd" asp-controller="Instructor" class="d-flex justify-content-center">
+            <div class="w-75">
+
+                <div class="form-group">
+                    <label asp-for="Name" class="form-label mt-4"></label>
+                    <input asp-for="Name"  class="form-control" />
+                    <span  asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Salary" class="form-label mt-4"></label>
+                    <input type="number" asp-for="Salary" class="form-control"/>
+                    <span asp-validation-for="Salary" class="text-danger" ></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Address" class="form-label mt-4"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span  asp-validation-for="Address" class="text-danger"></span>
+                </div>
+   
+                <div class="form-group">
+                    <label asp-for="dept_id" class="form-label mt-4">Department Name</label>
+                    <select asp-for="dept_id" asp-items="Department" class="form-control">
+                    </select>
+                </div>
+
+                        
+                <div class="form-group">
+                    <label asp-for="CrsID" class="form-label mt-4">Course Name</label>
+                    <select asp-for="CrsID" asp-items="Course" class="form-control">
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Image" class="form-label mt-4"></label>
+                    <input type="file" asp-for="Image"  class="form-control"/>
+                    <span asp-validation-for="Image" class="text-danger" ></span>
+
+                </div>
+
+                     <input type="submit" class="btn btn-success mt-4" value="Save" />
+            </div>
+
+        </form>
+       
+    </div>
+    <div class=" d-flex justify-content-center">
+     <a asp-controller="Instructor" asp-action="GetAllInstructors" class="btn btn-primary w-25">Back</a>
+    </div>
+</section>
+<br />
+
+@section Validation{
+    <partial name="/Views/Shared/_partial_validation.cshtml"/>
+}

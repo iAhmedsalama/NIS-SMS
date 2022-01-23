@@ -1,0 +1,88 @@
+﻿@model List<Department>
+
+@{ 
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewBag.Title="Departments";
+}  
+
+
+
+<br />
+
+    <div class="d-flex justify-content-center align-items-center">
+    <td class="text-center mx-5 py-5">
+        <a asp-controller="Department" asp-action="AddDept" class="btn btn-success w-25">Add New Department</a>                                
+                 
+    </td>
+
+    </div>
+<br />
+<center>
+
+<table class="table table-bordered table-hover w-75">
+
+    <tr class="text-center">
+
+        <th class="text-black" >Department Name</th>
+        <th class="text-black" >Department Manager</th>
+        <th class="text-black" >Department Details</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td class="text-center">@item.Name</td>
+
+            <td class="text-center">
+                <div class="d-flex justify-content-between">
+
+                   <div>@item.ManagerName</div>
+                   <button class="btn btn-info" id="@item.ID" onclick=AjaxCall(@item.ID)>Show Details</button>    
+                    
+                </div>
+                
+            </td>
+
+
+            <td class="text-center d-flex justify-content-evenly">
+                <a href="Department/GetByDeptartmentId/@item.ID" class="btn btn-primary ">Instructors Details</a>   
+                <a class="btn btn-warning ">Edit</a>                                
+
+            </td>
+
+        </tr>
+    }
+</table>
+
+    
+</center>
+
+
+
+
+<div id="div1"></div>
+
+
+@section Scripts{
+
+    <script>
+
+
+        function AjaxCall(){
+            var id=$("#id").val();
+
+              $.ajax({
+                  url:"/Department/GetByDeptartmentId",
+                  data:{"id":id},
+                  success: function(result){
+              $("#div1").html(result);
+            }});
+
+        }
+
+    </script>
+}
+
+  

@@ -1,0 +1,62 @@
+﻿@model Student
+
+@{
+    SelectList Department = new SelectList(ViewBag.Department,"ID","Name",Model.Department);
+    
+}
+
+@{ 
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewBag.Title="Edit Student";
+} 
+
+
+<form asp-controller="Student" asp-action="SaveStudent" asp-route-id="@Model.ID" >
+     <div asp-validation-summary="All" class="text-danger"></div>
+      <input asp-for="ID" type="hidden"  class="form-control" />
+
+   <div class="w-75 m-auto">
+
+    <div class="form-group">
+      <label asp-for="Name" class="form-label mt-4"></label>
+      <input asp-for="Name" class="form-control">
+      <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Degree" class="form-label mt-4"></label>
+      <input asp-for="Degree" class="form-control">
+      <span asp-validation-for="Degree" class="text-danger"></span>
+
+    </div>
+
+     <div class="form-group">
+      <label asp-for="Address" class="form-label mt-4"></label>
+      <input asp-for="Address" class="form-control">
+      <span asp-validation-for="Address" class="text-danger"></span>
+
+    </div>
+
+    <div class="form-group">
+      <label asp-for="dept_id" class="form-label mt-4"></label>
+        <select asp-for="dept_id" asp-items="Department" class="form-control">
+        </select>
+    </div>
+
+    <div class="form-group">
+      <label asp-for="Image" class="form-label mt-4"></label>
+      <input type="file" asp-for="Image" class="form-control">
+
+    </div>
+
+    <button  type="submit" class="btn btn-success my-5">Save</button>
+   </div>
+</form>
+
+<div class=" d-flex justify-content-center">
+    <a asp-controller="Student" asp-action="GetAllStudents" class="btn btn-primary w-25">Back</a>
+</div>
+
+@section Validation{
+    <partial name="/Views/Shared/_partial_validation.cshtml"/>
+}

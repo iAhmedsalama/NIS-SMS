@@ -1,0 +1,52 @@
+﻿@model Student
+
+<div class="card my-4" style="30rem; height:30rem">
+  <img src="~/images/@Model.Image" class="card-img-top h-50" style="object-fit:cover; object-position:top; border-radius:50%;" alt="student image">
+  <div class="card-body 50vh bg-light">
+    <h6 class="card-title">Student Name:@Model.Name</h6>
+    <h6 class="card-text">Student Address:@Model.Address</h6>
+
+    <div class="mt-5">
+        <div class="d-flex justify-content-evenly">
+            <a asp-controller="Student" asp-action="StudentDetails" asp-route-id="@Model.ID" class="btn btn-primary">Details</a>
+            <a asp-controller="Student" asp-action="EditStudent" asp-route-id="@Model.ID" class="btn btn-info">Edit</a>
+        </div>
+
+        @*<div class="d-flex justify-content-center my-3">
+            <a asp-controller="Student"
+            asp-action="DeleteStudent" 
+            asp-route-id="@Model.ID" 
+            class="btn btn-danger"
+            onclick="confirmDelete(event)"
+            >Delete</a>  
+        </div>
+        *@
+
+        <div class="d-flex justify-content-center my-3">
+            <partial name="_delete_window"/>
+        </div>
+
+
+
+     </div>
+  </div>
+</div>
+
+<script>
+    /*
+    function confirmDelete(event){
+        var accept=confirm("Are you want to Delete recored")
+        if(accept == false){
+            event.preventDefault();
+        }
+    }
+    */
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+      myInput.focus()
+    })
+
+</script>
+

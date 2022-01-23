@@ -1,0 +1,23 @@
+﻿@model Instructor
+
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewBag.Title="Instrutor Details";
+}
+
+
+
+
+<div class="d-flex justify-content-center">
+    <div class="w-25">
+        <div class=" d-flex justify-content-center">
+         <a asp-controller="instructor" asp-action="getallinstructors" class="btn btn-outline-primary">Back</a>
+        </div>
+    </div>
+
+    <div class="w-75">
+        <!-- Partial view -->
+        <partial name="_instructor_card.cshtml" model=@Model/>
+
+    </div>
+</div>

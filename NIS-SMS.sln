@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIS-SMS", "NIS-SMS\NIS-SMS.csproj", "{FEE2B173-05A7-402E-B3DE-1DBB216E362F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEE2B173-05A7-402E-B3DE-1DBB216E362F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE2B173-05A7-402E-B3DE-1DBB216E362F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEE2B173-05A7-402E-B3DE-1DBB216E362F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE2B173-05A7-402E-B3DE-1DBB216E362F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6541F10C-AC5D-4DD8-B7C4-B25B116597CD}
+	EndGlobalSection
+EndGlobal

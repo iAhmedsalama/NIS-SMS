@@ -1,0 +1,22 @@
+﻿@model StudentWithCrsResult
+
+
+@{ 
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewBag.Title="Student Result";
+} 
+
+
+
+<table>
+    <tr>
+        <td>Student Name: @Model.StudentName</td>
+    </tr>
+    <tr>
+        <td>Student Course: @Model.CourseName</td>
+    </tr>
+        <tr>
+        <td style="background-color:@Model.Color">Student Course: @Model.CourseName</td>
+    </tr>
+
+</table>

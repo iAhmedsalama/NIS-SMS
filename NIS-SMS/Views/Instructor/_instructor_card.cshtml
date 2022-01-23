@@ -1,0 +1,32 @@
+﻿@model Instructor
+
+<div class="card my-4" style="30rem; height:30rem">
+  <img src="~/images/@Model.Image" class="card-img-top h-50" style="object-fit:cover; object-position:top; border-radius:50%;" alt="Instructor image">
+  <div class="card-body 50vh bg-light">
+    <h6 class="card-title">Instructor Name:@Model.Name</h6>
+    <h6 class="card-text">Instructor Address:@Model.Address</h6>
+
+    <div class="mt-5">
+        <div class="d-flex justify-content-evenly">
+            <a asp-controller="Instructor" asp-action="InstructorDetails" asp-route-id="@Model.ID" class="btn btn-primary">Details</a>
+            <a asp-controller="Instructor" asp-action="EditInstructor" asp-route-id="@Model.ID" class="btn btn-info">Edit</a>
+        </div>
+
+        <div class="d-flex justify-content-center my-3">
+            <partial name="_delete_window"/>
+            
+        </div>
+
+     </div>
+  </div>
+</div>
+
+<script>
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+      myInput.focus()
+    })
+</script>
+
