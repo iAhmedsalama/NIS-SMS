@@ -8,3 +8,5 @@
 - Controllers
 - DataBase Entites
 - ViewModels
+
+> Project Implemented Solid Principles
