@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Day2.Models
+namespace NIS.Models
 {
     [ModelMetadataType(typeof(InstructorMetaData))]
     public partial class Instructor { }

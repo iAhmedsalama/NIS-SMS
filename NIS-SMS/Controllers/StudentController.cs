@@ -1,14 +1,14 @@
-﻿using Day2.Models;
-using Day2.ViewModel;
+﻿using NIS.Models;
+using NIS.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using AutoMapper;
 using System.Collections.Generic;
 using System;
-using Day2.Services;
+using NIS.Services;
 
-namespace Day2.Controllers
+namespace NIS.Controllers
 {
     public class StudentController : Controller
     {

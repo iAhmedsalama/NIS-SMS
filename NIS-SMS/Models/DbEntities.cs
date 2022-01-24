@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
-namespace Day2.Models
+namespace NIS.Models
 {
-    public class DbEntities:DbContext
+    public class DbEntities:IdentityDbContext
     {
         public DbEntities() { }
         public DbEntities(DbContextOptions<DbEntities> options) :base(options) { }

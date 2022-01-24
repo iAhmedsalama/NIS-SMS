@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Day2.Models;
-using Day2.ViewModel;
+using NIS.Models;
+using NIS.ViewModel;
 
-namespace Day2.MappingProfile
+namespace NIS.MappingProfile
 {
     public class MappingProfile:Profile
     {

@@ -1,7 +1,7 @@
-﻿using Day2.Models;
+﻿using NIS.Models;
 using System.Collections.Generic;
 
-namespace Day2.Services
+namespace NIS.Services
 {
     public interface IStudentRepository
     {

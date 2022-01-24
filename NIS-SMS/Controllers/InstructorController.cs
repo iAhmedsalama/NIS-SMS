@@ -1,6 +1,6 @@
-﻿using Day2.Models;
-using Day2.Services;
-using Day2.ViewModel;
+﻿using NIS.Models;
+using NIS.Services;
+using NIS.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Day2.Controllers
+namespace NIS.Controllers
 {
     public class InstructorController : Controller
     {

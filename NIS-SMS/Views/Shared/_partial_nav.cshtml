@@ -1,43 +1,4 @@
-﻿@*<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-                <div class="container">
-                    <a class="navbar-brand ">NIS Schools</a>
-                    <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        Menu
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ms-auto">
-
-                            <li class="nav-item mx-0 mx-lg-1">
-                                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Home</a>
-                            </li>
-
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <a asp-controller="Instructor" asp-action="GetAllInstructors" class="btn btn-primary" >Instructors</a>
-                                </li>
-
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <a asp-controller="Student" asp-action="GetAllStudents" class="btn btn-primary" >Student</a>
-                            </li>
-
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <a asp-controller="Department" asp-action="Index" class="btn btn-primary">Department</a>
-                            </li>
-
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <a href="#cotact" class="btn btn-primary" >Contact</a>
-                            </li>
-
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <a hef="#about" class="btn btn-primary" >About</a>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
-</nav>
-*@
+﻿
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div class="container-fluid ">
@@ -48,7 +9,7 @@
 
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor01">
 
-          <ul class="navbar-nav  w-50 d-flex justify-content-evenly">
+          <ul class="navbar-nav  w-75 d-flex justify-content-evenly">
             <li class="nav-item">
               <a class="nav-link active" asp-controller="Home" asp-action="Index" asp-fragment="#">Home
                 <span class="visually-hidden">(current)</span>
@@ -73,9 +34,35 @@
               </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" asp-fragment="#">About</a>
-            </li>
+            @if(User.Identity.IsAuthenticated == false)
+                {
+                    
+                    <li class="nav-item">
+                      <a class="nav-link active" asp-controller="Account" asp-action="login" asp-fragment="#">Login
+                        <span class="visually-hidden">(current)</span>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link active" asp-controller="Account" asp-action="Registeration" asp-fragment="#">Register
+                        <span class="visually-hidden">(current)</span>
+                      </a>
+                    </li>
+
+                }else
+                {
+                    <li class="nav-item">
+                        <span class="nav-link active">Welcom @User.Identity.Name</span>
+                    </li>
+
+                     <li class="nav-item">
+                      <a class="nav-link active" asp-controller="Account" asp-action="logout" asp-fragment="#">Logout
+                        <span class="visually-hidden">(current)</span>
+                      </a>
+                    </li>
+
+                }
+
           </ul>
         </div>
       </div>

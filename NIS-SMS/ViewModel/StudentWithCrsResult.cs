@@ -1,4 +1,4 @@
-﻿namespace Day2.ViewModel
+﻿namespace NIS.ViewModel
 {
     public class StudentWithCrsResult
     {

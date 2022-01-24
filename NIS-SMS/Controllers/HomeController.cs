@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Day2.Controllers
+namespace NIS.Controllers
 {
     public class HomeController : Controller
     {

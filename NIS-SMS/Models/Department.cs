@@ -1,4 +1,4 @@
-﻿namespace Day2.Models
+﻿namespace NIS.Models
 {
     public class Department
     {

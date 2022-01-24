@@ -1,11 +1,13 @@
-﻿using Day2.Models;
-using Day2.Services;
+﻿using NIS.Models;
+using NIS.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
-namespace Day2.Controllers
+namespace NIS.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
 
@@ -18,6 +20,7 @@ namespace Day2.Controllers
         }
         
         //GetAll  Instructors
+        
         public IActionResult Index()
         {
             List<Department> DepartmentModel = DepartmentService.GetAll();

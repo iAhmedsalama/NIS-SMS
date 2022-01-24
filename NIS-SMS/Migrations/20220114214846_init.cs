@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Day2.Migrations
+namespace NIS.Migrations
 {
     public partial class init : Migration
     {

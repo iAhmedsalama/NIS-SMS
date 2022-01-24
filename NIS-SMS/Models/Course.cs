@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Day2.Models
+namespace NIS.Models
 {
     public class Course
     {

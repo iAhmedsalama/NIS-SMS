@@ -1,10 +1,10 @@
-﻿using Day2.Models;
+﻿using NIS.Models;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace Day2
+namespace NIS
 {
     //custom validation is server side only -> because unobtursive do not have this custom validation
     public class DegreeAttribute : ValidationAttribute

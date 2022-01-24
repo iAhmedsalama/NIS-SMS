@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Day2.Models;
-using Day2.ViewModel;
+using NIS.Models;
+using NIS.ViewModel;
 using System.Linq;
 using System.Collections.Generic;
 using System;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 
-namespace Day2.Controllers
+namespace NIS.Controllers
 {
     public class PassDataController : Controller
     {

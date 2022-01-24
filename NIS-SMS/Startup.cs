@@ -1,5 +1,5 @@
-using Day2.Models;
-using Day2.Services;
+using NIS.Models;
+using NIS.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Day1
 {
@@ -38,6 +39,12 @@ namespace Day1
             //Register conection string
             services.AddDbContext<DbEntities>(
                 options=>options.UseSqlServer("Data Source=.;Initial Catalog=ITI_DB;Integrated Security=True"));
+
+
+            //Register Identity service [userManager, signInManager, roleManager]
+            //must register store manger
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DbEntities>();
+
 
             #endregion
 
@@ -74,6 +81,9 @@ namespace Day1
 
             //Register Session MiddleWare
             app.UseSession();
+
+            //Register Authentication Service
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

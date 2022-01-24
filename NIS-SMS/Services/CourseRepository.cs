@@ -1,8 +1,8 @@
-﻿using Day2.Models;
+﻿using NIS.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Day2.Services
+namespace NIS.Services
 {
     public class CourseRepository : ICourseRepository
     {
